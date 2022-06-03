@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d8b95b639dd2b94289a11876f453af2, type: 3}
+  m_Name: Enemy - Sunflower
+  m_EditorClassIdentifier: 
+  actorName: Sunflower Mob - Green bullet
+  description: Move straight from up to down
+  health: 1
+  speed: 1
+  score: 1
+  actorSprite: {fileID: 3967918304774954441, guid: e827146f8b5d8874c9bb5eea2b7c7d85, type: 3}
+  bulletSprite: {fileID: 4126463732935393006, guid: 9d8394962d709ab4e97c54d4add54fe1, type: 3}
