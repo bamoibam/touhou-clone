@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private bool GoUp = false;
     [SerializeField] private bool GoRight = false;
     [SerializeField] private bool GoLeft = false;
+    [SerializeField] private bool curve = false;
 
 
     // Start is called before the first frame update
@@ -63,6 +64,10 @@ public class EnemySpawner : MonoBehaviour
         /*
          * Need to do Curve Move, Zig-zac, Circle, Stop & Resume, patrol move , change to other move 
          */
+        if (curve)
+        {
+            enemy.AddComponent<CurveMove>();
+        }
         return enemy;
     }
 }

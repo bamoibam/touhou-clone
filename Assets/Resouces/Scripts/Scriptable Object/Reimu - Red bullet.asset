@@ -16,6 +16,7 @@ MonoBehaviour:
   description: Fast speed
   health: 1
   speed: 7
+  acceleration: 1
   score: 0
   actorSprite: {fileID: 0}
   bulletSprite: {fileID: 0}

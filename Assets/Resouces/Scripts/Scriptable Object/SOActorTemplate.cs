@@ -9,6 +9,7 @@ public class SOActorTemplate : ScriptableObject
     public string description;
     public int health;
     public float speed;
+    public float acceleration;
     public int score;
 
     public GameObject actorSprite;

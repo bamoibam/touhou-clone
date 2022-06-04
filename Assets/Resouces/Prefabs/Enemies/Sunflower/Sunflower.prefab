@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2460450894070457422}
   - component: {fileID: 1662728343571028628}
   m_Layer: 0
-  m_Name: Sunflower Straight
+  m_Name: Sunflower
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

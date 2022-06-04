@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     private int health;
     private float speed;
-
+    private float acceleration;
     private bool invincible = true;
 
     private GameObject actorPrefab;
@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     {
         health = actorModel.health;
         speed = actorModel.speed;
+        acceleration = actorModel.acceleration;
         actorPrefab = actorModel.actorSprite;
         bulletPrefab = actorModel.bulletSprite;
     }
@@ -60,11 +61,17 @@ public class Player : MonoBehaviour
             animator.SetBool("Left", false);
         }
 
+
+        
+
         if (horizontal > 0)
         {
             if (xMax < width /2.05f) //Stay within the width screen to avoid leaving the screen
             {
-                transform.localPosition += speed * Time.deltaTime * new Vector3(horizontal, 0, 0);
+                if (Input.GetAxisRaw("X") == 0)
+                    transform.localPosition += speed * Time.deltaTime * new Vector3(horizontal, 0, 0);
+                else
+                    transform.localPosition += speed * acceleration * Time.deltaTime * new Vector3(horizontal, 0, 0);
             }
             animator.SetBool("Right", true);
             animator.SetBool("Left", false);
@@ -73,7 +80,10 @@ public class Player : MonoBehaviour
         {
             if (xMax > -width /2.05f) //Stay within the width screen to avoid leaving the screen
             {
-                transform.localPosition += speed * Time.deltaTime * new Vector3(horizontal, 0, 0);
+                if (Input.GetAxisRaw("X") == 0)
+                    transform.localPosition += speed * Time.deltaTime * new Vector3(horizontal, 0, 0);
+                else
+                    transform.localPosition += speed * acceleration * Time.deltaTime * new Vector3(horizontal, 0, 0);
             }
             animator.SetBool("Left", true);
             animator.SetBool("Right", false);
@@ -82,15 +92,20 @@ public class Player : MonoBehaviour
         {
             if (yMax < height / 2.2f) //Stay within the height screen to avoid leaving the screen
             {
-                transform.localPosition += speed * Time.deltaTime * new Vector3(0, vertical, 0);
-
+                if (Input.GetAxisRaw("X") == 0)
+                    transform.localPosition += speed * Time.deltaTime * new Vector3(0, vertical, 0);
+                else
+                    transform.localPosition += speed * acceleration * Time.deltaTime * new Vector3(0, vertical, 0);
             }
         }
         if (vertical < 0)
         {
             if (yMax > -height / 2.2f) //Stay within the height screen to avoid leaving the screen
             {
-                transform.localPosition += speed * Time.deltaTime * new Vector3(0, vertical, 0);
+                if (Input.GetAxisRaw("X") == 0)
+                    transform.localPosition += speed * Time.deltaTime * new Vector3(0, vertical, 0);
+                else
+                    transform.localPosition += speed * acceleration * Time.deltaTime * new Vector3(0, vertical, 0);
             }
         }
     }

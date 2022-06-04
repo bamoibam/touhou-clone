@@ -16,6 +16,7 @@ MonoBehaviour:
   description: 
   health: 1
   speed: -2
+  acceleration: 1
   score: 0
   actorSprite: {fileID: 0}
   bulletSprite: {fileID: 0}

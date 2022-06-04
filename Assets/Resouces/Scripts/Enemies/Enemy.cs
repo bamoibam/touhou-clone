@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     private int health;
     private float speed;
+    private float acceleration;
     private float bulletRate = 0.5f;
     private int score;
     private GameObject actorPrefab;
@@ -17,6 +18,7 @@ public class Enemy : MonoBehaviour
     {
         health = actorModel.health;
         speed = actorModel.speed;
+        acceleration = actorModel.acceleration;
         actorPrefab = actorModel.actorSprite;
         bulletPrefab = actorModel.bulletSprite;
         score = actorModel.score;
@@ -27,6 +29,13 @@ public class Enemy : MonoBehaviour
         get
         {
             return speed;
+        }
+    }
+    public float Acceleration
+    {
+        get
+        {
+            return acceleration;
         }
     }
 

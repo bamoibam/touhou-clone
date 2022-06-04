@@ -16,6 +16,7 @@ MonoBehaviour:
   description: Shrine maiden
   health: 1
   speed: 2.5
+  acceleration: 0.5
   score: 0
   actorSprite: {fileID: 6277525748727599588, guid: f2e51bde9b8e4a14996d69a3311a8686, type: 3}
   bulletSprite: {fileID: 7079252391030705802, guid: deb6163d731c35340be9e4e386a06736, type: 3}

@@ -16,6 +16,7 @@ MonoBehaviour:
   description: Move straight from up to down
   health: 1
   speed: 1
+  acceleration: 0.2
   score: 1
   actorSprite: {fileID: 3967918304774954441, guid: e827146f8b5d8874c9bb5eea2b7c7d85, type: 3}
   bulletSprite: {fileID: 4126463732935393006, guid: 9d8394962d709ab4e97c54d4add54fe1, type: 3}
