@@ -14,8 +14,8 @@ public class UpDown : MonoBehaviour
     public void Move()
     {
         speed = GetComponent<Enemy>().Speed;
-        acceleration = GetComponent<Enemy>().Acceleration;
-        transform.localPosition += -transform.up * speed * acceleration * Time.deltaTime;
+        //acceleration = GetComponent<Enemy>().Acceleration;
+        transform.localPosition += -transform.up * speed  * Time.deltaTime;
     }
 
 }

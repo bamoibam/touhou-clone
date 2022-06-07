@@ -15,6 +15,6 @@ public class LeftToRight : MonoBehaviour
     {
         speed = GetComponent<Enemy>().Speed;
         acceleration = GetComponent<Enemy>().Acceleration;
-        transform.localPosition += transform.right * speed * acceleration * Time.deltaTime;
+        transform.localPosition += transform.right * speed * Time.deltaTime;
     }
 }

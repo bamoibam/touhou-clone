@@ -6,15 +6,18 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private SOActorTemplate actorModel;
     [SerializeField] private float spawnRate;
-    [SerializeField] [Range(0, 100)] private int quantity;
+    [SerializeField][Range(0, 100)] private int quantity;
     private GameObject enemy;
 
     [SerializeField] private bool GoDown = false;
     [SerializeField] private bool GoUp = false;
     [SerializeField] private bool GoRight = false;
     [SerializeField] private bool GoLeft = false;
-    [SerializeField] private bool curve = false;
-
+    [SerializeField] private bool GoCurve = false;
+    [SerializeField] private bool Stop = false;
+    [SerializeField] private float StopAfterS = 0f;
+    [SerializeField] private bool Resume = false;
+    [SerializeField] private float ResumeAfterS = 0f;
 
     // Start is called before the first frame update
     private void Awake()
@@ -64,10 +67,81 @@ public class EnemySpawner : MonoBehaviour
         /*
          * Need to do Curve Move, Zig-zac, Circle, Stop & Resume, patrol move , change to other move 
          */
-        if (curve)
+        if (GoCurve)
         {
             enemy.AddComponent<CurveMove>();
         }
         return enemy;
+
+    }
+    private void Update()
+    {
+        if (enemy != null)
+        {
+            //Stopping Invoke
+            if (Stop)
+            {
+                Invoke("DisableAllMovingComponent", StopAfterS);
+            }
+            if (Resume)
+            {
+                Invoke("EnableAllMovingComponent", StopAfterS + ResumeAfterS);
+            }
+        }
+    }
+    private void DisableAllMovingComponent()
+    {
+        if (enemy != null)
+        {
+            if (GoDown)
+            {
+                enemy.GetComponent<UpDown>().enabled = false;
+            }
+            if (GoUp)
+            {
+                enemy.GetComponent<GoUp>().enabled = false;
+            }
+            if (GoRight)
+            {
+                enemy.GetComponent<LeftToRight>().enabled = false;
+            }
+            if (GoLeft)
+            {
+                enemy.GetComponent<RightToLeft>().enabled = false;
+            }
+            if (GoCurve)
+            {
+                enemy.GetComponent<CurveMove>().enabled = false;
+            }
+        }
+
+        Stop = false;
+    }
+    private void EnableAllMovingComponent()
+    {
+        if (enemy != null)
+        {
+            if (GoDown)
+            {
+                enemy.GetComponent<UpDown>().enabled = true;
+            }
+            if (GoUp)
+            {
+                enemy.GetComponent<GoUp>().enabled = true;
+            }
+            if (GoRight)
+            {
+                enemy.GetComponent<LeftToRight>().enabled = true;
+            }
+            if (GoLeft)
+            {
+                enemy.GetComponent<RightToLeft>().enabled = true;
+            }
+            if (GoCurve)
+            {
+                enemy.GetComponent<CurveMove>().enabled = true;
+            }
+        }
+        Resume = false;
     }
 }

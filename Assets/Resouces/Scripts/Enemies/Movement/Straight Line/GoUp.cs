@@ -15,6 +15,6 @@ public class GoUp : MonoBehaviour
     {
         speed = GetComponent<Enemy>().Speed;
         acceleration = GetComponent<Enemy>().Acceleration;
-        transform.localPosition += transform.up * speed * acceleration * Time.deltaTime;
+        transform.localPosition += transform.up * speed  * Time.deltaTime;
     }
 }

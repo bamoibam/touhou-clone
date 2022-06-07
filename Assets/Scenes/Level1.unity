@@ -683,7 +683,11 @@ MonoBehaviour:
   GoUp: 0
   GoRight: 0
   GoLeft: 0
-  curve: 0
+  GoCurve: 0
+  Stop: 0
+  StopAfterS: 0
+  Resume: 0
+  ResumeAfterS: 0
 --- !u!1 &1318777764
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,7 +912,11 @@ MonoBehaviour:
   GoUp: 1
   GoRight: 0
   GoLeft: 1
-  curve: 0
+  GoCurve: 0
+  Stop: 0
+  StopAfterS: 0
+  Resume: 0
+  ResumeAfterS: 0
 --- !u!4 &1847352342
 Transform:
   m_ObjectHideFlags: 0
@@ -973,11 +981,15 @@ MonoBehaviour:
   actorModel: {fileID: 11400000, guid: edc529687e30c5543b353c724237dec9, type: 2}
   spawnRate: 1
   quantity: 1
-  GoDown: 0
+  GoDown: 1
   GoUp: 0
   GoRight: 0
   GoLeft: 0
-  curve: 1
+  GoCurve: 0
+  Stop: 1
+  StopAfterS: 5
+  Resume: 1
+  ResumeAfterS: 5
 --- !u!114 &2007820366
 MonoBehaviour:
   m_ObjectHideFlags: 0
